@@ -22,7 +22,7 @@ export default class Login extends Component {
 
   userLogin = () => {
     if(this.state.email === '' || this.state.password === '') {
-      Alert.alert('Fill in the empty fields!')
+      Alert.alert('¡Complete los campos vacíos!')
     } else {
 
       this.setState({
@@ -54,28 +54,28 @@ export default class Login extends Component {
       <View style={styles.container}>  
         <TextInput
           style={styles.inputStyle}
-          placeholder="Email"
+          placeholder="Correo"
           value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
         />
         <TextInput
           style={styles.inputStyle}
-          placeholder="Password"
+          placeholder="Contraseña"
           value={this.state.password}
           onChangeText={(val) => this.updateInputVal(val, 'password')}
           maxLength={15}
           secureTextEntry={true}
         />   
         <Button
-          color="#4682B4"
-          title="Log In"
+          color="#A30E00"
+          title="Iniciar Sesión"
           onPress={() => this.userLogin()}
         />   
 
         <Text 
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Signup')}>
-          You do not have an account? Click here to register
+          ¿No tienes una cuenta? Pulse aquí para registrarse
         </Text>                          
       </View>
     );
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   loginText: {
-    color: '#3740FE',
+    color: '#2AA15F',
     marginTop: 25,
     textAlign: 'center'
   },

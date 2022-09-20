@@ -34,11 +34,11 @@ export default class Detalles extends Component {
 
   modificar = (key) => {
     if (this.state.nombres.trim() == '') {
-      Alert.alert('Error', 'Ingrese un nombre de colector');
+      Alert.alert('Error', 'Ingrese un nombre de la pelicula');
     } else if (this.state.descripcion.trim() == '') {
-      Alert.alert('Error', 'Ingrese una descripción de colector');
+      Alert.alert('Error', 'Ingrese una descripción de la pelicula');
     } else if (this.state.foto.trim() == '') {
-      Alert.alert('Error', 'Ingrese una url de imagen de colector');
+      Alert.alert('Error', 'Ingrese una url de imagen de la pelicula');
     } else {
       firebase
         .firestore()
@@ -78,16 +78,16 @@ export default class Detalles extends Component {
       <View style={styles.container}>
         <StatusBar backgroundColor={color.BLUE} translucent={true} />
         <View style={styles.espacio}>
-          <Text style={styles.title}>Detalles del colector</Text>
+          <Text style={styles.title}>Detalles de la pelicula</Text>
         </View>
         <Input
-          placeholder="Nombre colector"
+          placeholder="Nombre "
           value={this.state.nombres}
           onChangeText={(val) => this.updateInputVal(val, 'nombres')}
         />
 
         <Input
-          placeholder="Descripción de colector"
+          placeholder="Descripción "
           value={this.state.descripcion}
           onChangeText={(val) => this.updateInputVal(val, 'descripcion')}
         />
@@ -102,8 +102,8 @@ export default class Detalles extends Component {
           <View style={styles.espacio}>
             <Button
               style={styles.boton}
-              color="#d32f2f"
-              title="Eliminar colector"
+              color="#A30E00"
+              title="Eliminar pelicula"
               onPress={() => this.eliminar(this.state.key)}
             />
           </View>
@@ -111,7 +111,8 @@ export default class Detalles extends Component {
           <View style={styles.espacio}>
             <Button
               style={styles.boton}
-              title="Modificar colector"
+              color="#0EAB54"
+              title="Modificar pelicula"
               onPress={() => this.modificar(this.state.key)}
             />
           </View>

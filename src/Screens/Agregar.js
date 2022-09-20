@@ -36,13 +36,13 @@ export default function Agregar({props,navigation}) {
 
   const onSubmit = () => {
     if (!formData.nombre) {
-      Alert.alert('Error', 'Por favor ingrese el nombre del colector');
+      Alert.alert('Error', 'Por favor ingrese el nombre de la pelicula');
     } else if (!formData.descripcion) {
-      Alert.alert('Error', 'Por favor ingrese la descripción del colector');
+      Alert.alert('Error', 'Por favor ingrese la descripción de la pelicula');
     } else if (!formData.url) {
       Alert.alert(
         'Error',
-        'Por favor ingrese el url de la imagen del colector'
+        'Por favor ingrese el url de la imagen de la pelicula'
       );
     } else if (
       formData.nombre.trim() == '' ||
@@ -55,7 +55,7 @@ export default function Agregar({props,navigation}) {
       db.collection('peliculas')
         .add(data)
         .then(() => {
-          Alert.alert('Éxito', 'Colector agregado con éxito');
+          Alert.alert('Éxito', 'Pelicula agregado con éxito');
           this.props.navigation.navigate('Lista de colectores');
           reset();
         })
@@ -69,14 +69,14 @@ export default function Agregar({props,navigation}) {
     <ScrollView>
       <View style={styles.cajita3}>
         <View style={styles.cajita}>
-          <Text style={styles.title}>Agregar colector</Text>
+          <Text style={styles.title}>Agregar Pelicula</Text>
           <Input
             placeholder="Nombre pelicula"
             onChange={(e) => onChange(e, 'nombre')}
           />
 
           <Input
-            placeholder="Genero de pelicula"
+            placeholder="Genero "
             onChange={(e) => onChange(e, 'descripcion')}
           />
 
@@ -84,11 +84,10 @@ export default function Agregar({props,navigation}) {
             placeholder="Url de imagen"
             onChange={(e) => onChange(e, 'url')}
           />
-          <View style={styles.cajita2}>
+          <View >
             <Button
-            color="#4682B4"
+            color="#A30E00"
               title="Agregar pelicula"
-             
               onPress={onSubmit}
             />
           </View>
@@ -116,6 +115,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 25,
     textAlign: 'center',
+    marginBottom: 20
   },
   boton: {
     height: "100%",

@@ -23,14 +23,14 @@ function MyStack() {
         name="Signup" 
         component={Signup} 
        options={{ title: 'Sign up',headerStyle: {
-              backgroundColor: '#4682B4'
+              backgroundColor: '#A30E00'
            } ,headerTintColor: '#fff',  }}
       />       
       <Stack.Screen 
         name="Login" 
         component={Login} 
         options={{ title: 'Login',headerStyle: {
-              backgroundColor: '#4682B4'
+              backgroundColor: '#A30E00'
            } ,headerTintColor: '#fff',  }}
       />
       <Stack.Screen 
@@ -41,7 +41,11 @@ function MyStack() {
            } ,headerTintColor: '#fff',  },{ headerShown: false} }
       />
 
-       <Stack.Screen name="Detalles" component={Detalles} />
+       <Stack.Screen name="Detalles" 
+       component={Detalles} 
+       options={{ title: 'Detalles',headerStyle: {
+        backgroundColor: '#A30E00'
+     } ,headerTintColor: '#fff',  }}/>
     </Stack.Navigator>
   );
 }

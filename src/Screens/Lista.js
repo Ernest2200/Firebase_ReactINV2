@@ -80,10 +80,13 @@ class Lista extends Component {
                   console.log(item.nombres),
                   (
                     <ListItem
+                    
                       bottomDivider
                       style={{
                         borderBottomColor: 'gray',
                         borderBottomWidth: 2,
+                        
+                        
                       }}
                       onPress={() => {
                          this.props.navigation.navigate('Detalles', {
@@ -100,7 +103,7 @@ class Lista extends Component {
                         }}
                       />
 
-                      <ListItem.Content>
+                      <ListItem.Content >
                         <ListItem.Title>{item.nombre}</ListItem.Title>
                         <ListItem.Subtitle>
                           {item.descripcion}

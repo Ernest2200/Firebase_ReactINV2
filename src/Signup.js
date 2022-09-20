@@ -23,7 +23,7 @@ export default class Signup extends Component {
 
   registerUser = () => {
     if(this.state.email === '' || this.state.password === '' || this.state.displayName === '') {
-      alert('Fill in the empty fields!')
+      alert('¡Complete los campos vacíos!')
     } else {
       this.setState({
         isLoading: true,
@@ -54,26 +54,26 @@ export default class Signup extends Component {
       <View style={styles.container}>  
         <TextInput
           style={styles.inputStyle}
-          placeholder="Name"
+          placeholder="Nombre"
           value={this.state.displayName}
           onChangeText={(val) => this.updateInputVal(val, 'displayName')}
         />      
         <TextInput
           style={styles.inputStyle}
-          placeholder="Email"
+          placeholder="Correo"
           value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
         />
         <TextInput
           style={styles.inputStyle}
-          placeholder="Password"
+          placeholder="Contraseña"
           value={this.state.password}
           onChangeText={(val) => this.updateInputVal(val, 'password')}
           maxLength={15}
           secureTextEntry={true}
         />   
         <Button
-          color="#4682B4"
+          color="#A30E00"
           title="Sing Up"
           onPress={() => this.registerUser()}
         />
@@ -81,7 +81,7 @@ export default class Signup extends Component {
         <Text 
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Login')}>
-          Are you already registered? Click here to login
+          ¿Ya estás registrado? Haga clic aquí para iniciar sesión
         </Text>                          
       </View>
     );
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   loginText: {
-    color: '#3740FE',
+    color: '#2AA15F',
     marginTop: 25,
     textAlign: 'center'
   },
